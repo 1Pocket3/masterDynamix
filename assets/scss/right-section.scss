@@ -1,0 +1,148 @@
+.right-section {
+    grid-area: c;
+    position: relative;
+    background: #f9f9f9;
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+        height: 300px;
+        width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        height: 472.39px;
+        width: 100%;
+        top: -20px
+    }
+}
+
+.circle {
+    z-index: 0;
+    position: absolute;
+    border-radius: 50%;
+    border: 4px solid #000;
+}
+
+.large {
+    display: flex;
+    width: 778px;
+    height: 778px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    // @media (max-width: 768px) {
+    //   width: 330.26px;
+    //   height: 330.26px;
+    // }
+
+    @media (max-width: 1024px) {
+        width: 330.26px;
+        height: 330.26px;
+    }
+}
+
+.medium {
+    display: flex;
+    width: 566px;
+    height: 566px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 768px) {
+        width: 150px;
+        height: 150px;
+    }
+
+    @media (max-width: 1024px) {
+        width: 240.27px;
+        height: 240.27px;
+    }
+}
+
+.small {
+    width: 354px;
+    height: 354px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    rotate: 10px;
+
+    @media (max-width: 1024px) {
+        width: 150.27px;
+        height: 150.27px;
+    }
+}
+
+.svg-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+
+    &.svg1 {
+        position: absolute;
+        top: -50px;
+        right: 50%;
+    }
+
+    &.svg2 {
+        position: absolute;
+        bottom: -30px;
+        right: 30%;
+    }
+
+    &.svg3 {
+        position: absolute;
+        bottom: -40px;
+        right: 50%;
+    }
+
+    @media (max-width: 1024px) {
+        &.svg1 {
+            position: absolute;
+            top: -17px;
+            right: 50%;
+            width: 32.67px;
+            height: 32.67px;
+        }
+
+        &.svg2 {
+            position: absolute;
+            bottom: -12px;
+            right: 30%;
+            width: 34.38px;
+            height: 34.38px;
+        }
+
+        &.svg3 {
+            position: absolute;
+            bottom: -25px;
+            right: 50%;
+            width: 47.12px;
+            height: 47.12px;
+        }
+
+        &.svg4 {
+            width: 44.79px;
+            height: 44.79px;
+        }
+    }
+}
+
+.smooth-bg {
+    rotate: 45deg;
+    position: absolute;
+    width: 250.71px;
+    height: 506.54px;
+    border-radius: 18px;
+    filter: blur(80px);
+    //   top: 60%;
+    //   transform: translate(-24%, 50%);
+
+    background: radial-gradient(circle, rgba(152, 209, 241) 0%, #0098ea 100%) no-repeat;
+
+    @media (max-width: 1024px) {
+        width: 143.15px;
+        height: 289.22px;
+        filter: blur(50px);
+    }
+}

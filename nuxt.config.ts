@@ -1,19 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
-  css: ["~/assets/css/tailwind.css", "~/assets/scss/main.scss"],
+  ssr: false,
+  css: ["@/assets/css/tailwind.css", "@/assets/scss/main.scss"],
   devtools: { enabled: true },
-  app: {
-    head: {
-      link: [
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap",
-        },
-      ],
-    },
-  },
-  modules: ["@hypernym/nuxt-gsap", "@nuxtjs/google-fonts"],
+  modules: ["@hypernym/nuxt-gsap", "@nuxt/image"],
   gsap: {
     composables: true,
     provide: false,
@@ -27,5 +18,10 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  image: {
+    inject: true,
+    format: ["jpeg", "png", "webp", "svg"],
+    dir: "assets/images",
   },
 });
