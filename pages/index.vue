@@ -1,7 +1,7 @@
 <template>
-  <div id="main" class="container">
+  <div id="#main" class="container">
     <!-- Left Section -->
-    <LeftSection :form="form" />
+    <LeftSection :form="form" :v$="v$" />
 
     <!-- Right Section -->
     <RightSection :Svg1="Svg1" :Svg2="Svg2" :Svg3="Svg3" :Svg4="Svg4" />
@@ -29,6 +29,20 @@ export default {
       password: { required },
     };
     const v$ = useVuelidate(rules, form);
+
+    watch(
+      () => form.email,
+      () => {
+        v$.value.email.$touch();
+      }
+    );
+
+    watch(
+      () => form.password,
+      () => {
+        v$.value.password.$touch();
+      }
+    );
 
     onMounted(() => {
       const mm = useGsap.matchMedia();
@@ -83,11 +97,11 @@ export default {
         });
       });
 
-      useGsap.from("#main", {
-        y: 100,
-        opacity: 0,
-        delay: 1,
-      });
+      // useGsap.from("#main", {
+      //   y: 100,
+      //   opacity: 0,
+      //   delay: 1,
+      // });
 
       useGsap.from("#form", {
         y: 100,
@@ -109,8 +123,8 @@ export default {
 
       useGsap.from(".card-container", {
         x: 500,
-        opacity: 1,
-        delay: 1.2,
+        opacity: 0,
+        delay: 0.8,
       });
 
       mm.add("(min-width: 1025px)", () => {
